@@ -23,11 +23,9 @@ class MovieList extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
                 <FlatList
                     data={this.state.data}
-                    renderItem={({item}) => <MovieListItem movie={item}/>} />
-            </View>
+                    renderItem={({item}) => <MovieListItem movie={item}/>} /> 
         );
     }
 
@@ -51,10 +49,5 @@ class MovieList extends Component {
                 });
     }
 }
-
-const styles = StyleSheet.create({
-  container: {
-  }
-});
 
 export default MovieList;

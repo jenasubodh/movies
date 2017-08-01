@@ -7,8 +7,9 @@ class MovieListItem extends Component {
         return(
             <View style={styles.container}>
                  <Image source={{uri: 'https://image.tmdb.org/t/p/w600' + this.props.movie.poster_path}}
-                        style={styles.imageBackground} blurRadius={7}>
-                        <Text style={styles.text}>{this.props.movie.original_title}</Text>
+                        style={styles.imageBackground} blurRadius={1}>
+                        <Text style={styles.textTitle}>{this.props.movie.original_title}</Text>
+                        <Text style={styles.textOverview}>{this.props.movie.overview}</Text>
                 </Image>
             </View>
         );
@@ -17,8 +18,13 @@ class MovieListItem extends Component {
 
 const styles = StyleSheet.create({
   container: {
+    borderRadius: 1,
+    shadowColor: "#000000",
+    shadowOpacity: 0.3,
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
     height: 250,
-    padding: 30,
     flexDirection: 'row',
     justifyContent: 'center'
   },
@@ -28,7 +34,7 @@ const styles = StyleSheet.create({
     height: null,
     resizeMode: 'cover'
   },
-  text: {
+  textTitle: {
     textAlign: 'left',
     color: 'white',
     backgroundColor: 'rgba(0,0,0,0)',
@@ -36,6 +42,13 @@ const styles = StyleSheet.create({
     paddingTop: 120,
     paddingLeft: 10,
     fontWeight: 'bold'
+  },
+  textOverview: {
+    textAlign: 'left',
+    color: 'white',
+    backgroundColor: 'rgba(0,0,0,0)',
+    fontSize: 15,
+    paddingLeft: 10
   }
 
 });
