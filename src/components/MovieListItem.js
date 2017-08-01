@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, TouchableHighlight, View, Text, Image } from 'react-native';
 
 class MovieListItem extends Component {
 
     render() {
         return(
-            <View style={styles.container}>
-                 <Image source={{uri: 'https://image.tmdb.org/t/p/w600' + this.props.movie.poster_path}}
-                        style={styles.imageBackground} blurRadius={1}>
-                        <Text style={styles.textTitle}>{this.props.movie.original_title}</Text>
-                        <Text style={styles.textOverview}>{this.props.movie.overview}</Text>
-                </Image>
-            </View>
+            <TouchableHighlight
+              onPress={() => alert(this.props.movie.original_title)}>
+              <View style={styles.container}>
+                  <Image source={{uri: 'https://image.tmdb.org/t/p/w600' + this.props.movie.poster_path}}
+                          style={styles.imageBackground} blurRadius={1}>
+                          <Text style={styles.textTitle}>{this.props.movie.original_title}</Text>
+                          <Text style={styles.textOverview}>{this.props.movie.overview}</Text>
+                  </Image>
+              </View>
+            </TouchableHighlight>
         );
     }
 }

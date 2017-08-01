@@ -25,6 +25,7 @@ class MovieList extends Component {
         return (
                 <FlatList
                     data={this.state.data}
+                    keyExtractor={item => item.id}
                     renderItem={({item}) => <MovieListItem movie={item}/>} /> 
         );
     }
