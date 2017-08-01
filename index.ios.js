@@ -4,9 +4,13 @@ import {
   StyleSheet,
   View
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import MovieList from './src/components/MovieList';
 
-export default class Movies extends Component {
+class Trending extends Component {
+  static navigationOptions = {
+    title: 'Trending',
+  };
   render() {
     return (
       <View style={styles.container}>
@@ -15,6 +19,10 @@ export default class Movies extends Component {
     );
   }
 }
+
+const Movies = StackNavigator({
+  Trending: { screen: Trending },
+});
 
 const styles = StyleSheet.create({
   container: {
