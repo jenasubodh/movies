@@ -6,7 +6,7 @@ class MovieListItem extends Component {
     render() {
         return(
             <View style={styles.container}>
-                 <Image source={{uri: 'https://s-media-cache-ak0.pinimg.com/736x/20/6d/68/206d68926abd7d6e58995d9df3d31931--new-movie-posters-movie-covers.jpg'}}
+                 <Image source={{uri: 'https://image.tmdb.org/t/p/w600' + this.props.movie.poster_path}}
                         style={styles.imageBackground}>
                         <Text style={styles.text}>{this.props.movie.title}</Text>
                 </Image>
