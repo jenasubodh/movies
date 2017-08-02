@@ -58,7 +58,12 @@ class TrendingScreen extends Component {
     }
 
     showMovieDetail(movieId) {
-        this.props.navigation.navigate('Detail', {movieId: movieId});
+
+        // Get the movie from the movies array
+        var movie = this.state.data.find(movie => movie.id === movieId);
+
+        // Push the detail screen to the navigation stack and pass the movie object
+        this.props.navigation.navigate('Detail', {movie: movie});
     }
 }
 
