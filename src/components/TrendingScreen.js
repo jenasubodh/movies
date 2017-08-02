@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import { StyleSheet, View, FlatList, Text } from 'react-native';
 import MovieListItem from './MovieListItem';
 
-class MovieList extends Component {
+class TrendingScreen extends Component {
+
+    static navigationOptions = {
+        title: 'Trending',
+    };
 
     constructor(props) {
         super(props);
@@ -22,11 +26,14 @@ class MovieList extends Component {
     }
 
     render() {
+        
         return (
+            <View style={styles.container}>
                 <FlatList
                     data={this.state.data}
                     keyExtractor={item => item.id}
-                    renderItem={({item}) => <MovieListItem movie={item}/>} /> 
+                    renderItem={({item}) => <MovieListItem movie={item} movieSelected={this.showMovieDetail.bind(this)} />} /> 
+            </View>
         );
     }
 
@@ -49,6 +56,17 @@ class MovieList extends Component {
                     this.setState({ error, loading: false });
                 });
     }
+
+    showMovieDetail(movieId) {
+        this.props.navigation.navigate('Detail', {movieId: movieId});
+    }
 }
 
-export default MovieList;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+  }
+});
+
+export default TrendingScreen;
