@@ -14,7 +14,6 @@ class MovieListItem extends Component {
               <Image style={styles.movieImage} source={{uri: 'https://image.tmdb.org/t/p/w600' + this.props.movie.poster_path}}>
                 <View style={styles.movieDetailContainer}>
                     <Text style={styles.movieName}>{this.props.movie.original_title}</Text>
-                    <Text style={styles.movieOverview}>{this.props.movie.overview}</Text>
                 </View>
               </Image>
             </TouchableHighlight>
@@ -51,16 +50,10 @@ movieImage: {
 movieName: {
     color: '#fff',
     opacity: .9,
-    fontSize: 20,
+    fontSize: 25,
     textAlign: 'center',
     fontWeight: '500',
     marginVertical: 15,
-    backgroundColor: 'transparent'
-},
-movieOverview: {
-    color: '#fff',
-    opacity: .9,
-    textAlign: 'center',
     backgroundColor: 'transparent'
 }
 })
