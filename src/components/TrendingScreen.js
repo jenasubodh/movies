@@ -28,7 +28,7 @@ class TrendingScreen extends Component {
     render() {
         
         return (
-            <View style={styles.container}>
+            <View>
                 <FlatList
                     data={this.state.data}
                     keyExtractor={item => item.id}
@@ -66,12 +66,5 @@ class TrendingScreen extends Component {
         this.props.navigation.navigate('Detail', {movie: movie});
     }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 export default TrendingScreen;
